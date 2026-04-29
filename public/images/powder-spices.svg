@@ -1,0 +1,18 @@
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1100" rx="56" fill="url(#bg)"/>
+  <rect x="58" y="58" width="784" height="984" rx="42" fill="#FFF9F1" fill-opacity="0.84" stroke="rgba(255,255,255,0.64)"/>
+  <text x="110" y="156" fill="#8F4228" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="7">POWDER SPICES</text>
+  <text x="108" y="246" fill="#140D09" font-family="Georgia, serif" font-size="90">Vivid color</text>
+  <path d="M176 494C254 380 414 356 496 442C580 530 550 704 426 756C306 806 142 730 126 590C122 552 136 520 176 494Z" fill="#B95D39"/>
+  <path d="M408 350C484 288 596 292 670 356C744 420 756 534 696 612C628 700 494 726 388 664C280 600 290 448 408 350Z" fill="#E4C06D"/>
+  <path d="M266 600C334 542 422 542 492 598C564 654 576 764 518 840C464 912 354 936 270 886C178 830 182 674 266 600Z" fill="#F5D79B"/>
+  <rect x="110" y="852" width="680" height="102" rx="30" fill="#211711"/>
+  <text x="150" y="916" fill="#F9EDDB" font-family="Arial, sans-serif" font-size="30">Turmeric, chili, coriander, blends</text>
+  <defs>
+    <linearGradient id="bg" x1="58" y1="32" x2="850" y2="1068" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8EF"/>
+      <stop offset="0.52" stop-color="#F3DDD3"/>
+      <stop offset="1" stop-color="#DD8F6D"/>
+    </linearGradient>
+  </defs>
+</svg>

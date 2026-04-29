@@ -1,0 +1,20 @@
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1100" rx="56" fill="url(#bg)"/>
+  <rect x="58" y="58" width="784" height="984" rx="42" fill="#FFFDF8" fill-opacity="0.84" stroke="rgba(255,255,255,0.64)"/>
+  <text x="110" y="156" fill="#35503D" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="7">TEA AND COFFEE</text>
+  <text x="108" y="246" fill="#140D09" font-family="Georgia, serif" font-size="86">Calm comfort</text>
+  <ellipse cx="314" cy="588" rx="174" ry="126" fill="#35503D"/>
+  <ellipse cx="314" cy="588" rx="120" ry="84" fill="#FFF7EC"/>
+  <ellipse cx="314" cy="588" rx="88" ry="60" fill="#8F4228"/>
+  <path d="M486 532C486 458 546 398 620 398H642C726 398 794 466 794 550V612C794 694 726 762 642 762H620C546 762 486 702 486 628V532Z" fill="#EED9BF"/>
+  <path d="M570 492H636C688 492 730 534 730 586V590C730 642 688 684 636 684H570C520 684 478 644 478 592V584C478 532 520 492 570 492Z" fill="#B95D39"/>
+  <rect x="110" y="852" width="680" height="102" rx="30" fill="#140D09"/>
+  <text x="152" y="916" fill="#F9EDDB" font-family="Arial, sans-serif" font-size="30">Warm tea rituals and aromatic coffee</text>
+  <defs>
+    <linearGradient id="bg" x1="60" y1="32" x2="850" y2="1068" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4FAF5"/>
+      <stop offset="0.54" stop-color="#DCE9E0"/>
+      <stop offset="1" stop-color="#E8C896"/>
+    </linearGradient>
+  </defs>
+</svg>
