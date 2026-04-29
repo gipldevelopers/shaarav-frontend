@@ -1,6 +1,7 @@
 import { MapPin, Phone, Mail } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-function Footer({ navigation, contactDetails, onNavigate }) {
+function Footer({ navigation }) {
   return (
     <footer className="border-t border-clove-200/70 bg-white pt-16 pb-8">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -19,7 +20,7 @@ function Footer({ navigation, contactDetails, onNavigate }) {
             <p className="text-sm leading-relaxed text-clove-700">
               Premium exports and global sourcing. Delivering quality products worldwide with a focus on reliability, trust, and excellence.
             </p>
-            <div className="flex gap-4 text-clove-700 text-sm font-semibold">
+            <div className="flex gap-4 text-clove-700 text-sm font-bold uppercase tracking-widest">
               <a href="#" className="hover:text-copper-700 transition-colors">FB</a>
               <a href="#" className="hover:text-copper-700 transition-colors">TW</a>
               <a href="#" className="hover:text-copper-700 transition-colors">IG</a>
@@ -29,16 +30,16 @@ function Footer({ navigation, contactDetails, onNavigate }) {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-display text-lg font-semibold text-clove-950 mb-6">Quick Links</h3>
-            <ul className="flex flex-col gap-3 text-sm text-clove-700">
-              {navigation.map((item) => (
-                <li key={item.sectionId}>
-                  <button 
-                    onClick={() => onNavigate(item.sectionId)}
-                    className="hover:text-copper-700 transition-colors font-semibold"
+            <h3 className="font-display text-lg font-bold text-clove-950 mb-6 uppercase tracking-wider">Quick Links</h3>
+            <ul className="flex flex-col gap-3 text-sm text-clove-700 font-bold">
+              {navigation.filter(item => !item.hidden).map((item) => (
+                <li key={item.path}>
+                  <Link 
+                    to={item.path}
+                    className="hover:text-copper-700 transition-colors"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -46,22 +47,22 @@ function Footer({ navigation, contactDetails, onNavigate }) {
 
           {/* Services */}
           <div>
-            <h3 className="font-display text-lg font-semibold text-clove-950 mb-6">Services</h3>
-            <ul className="flex flex-col gap-3 text-sm text-clove-700 font-semibold">
-              <li><a href="#" className="hover:text-copper-700 transition-colors">Global Sourcing</a></li>
-              <li><a href="#" className="hover:text-copper-700 transition-colors">Quality Assurance</a></li>
-              <li><a href="#" className="hover:text-copper-700 transition-colors">Logistics & Supply</a></li>
-              <li><a href="#" className="hover:text-copper-700 transition-colors">Custom Packaging</a></li>
+            <h3 className="font-display text-lg font-bold text-clove-950 mb-6 uppercase tracking-wider">Our Products</h3>
+            <ul className="flex flex-col gap-3 text-sm text-clove-700 font-bold">
+              <li><Link to="/products/whole-spices" className="hover:text-copper-700 transition-colors">Whole Spices</Link></li>
+              <li><a href="#" className="hover:text-copper-700 transition-colors pointer-events-none opacity-50">Powder Spices</a></li>
+              <li><a href="#" className="hover:text-copper-700 transition-colors pointer-events-none opacity-50">Tea & Coffee</a></li>
+              <li><a href="#" className="hover:text-copper-700 transition-colors pointer-events-none opacity-50">Custom Blends</a></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-display text-lg font-semibold text-clove-950 mb-6">Contact Us</h3>
-            <ul className="flex flex-col gap-4 text-sm text-clove-700">
+            <h3 className="font-display text-lg font-bold text-clove-950 mb-6 uppercase tracking-wider">Contact Us</h3>
+            <ul className="flex flex-col gap-4 text-sm text-clove-700 font-medium">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="shrink-0 text-copper-700" />
-                <span className="leading-relaxed">B7-1601, Waterlily, Adani Shantigram, Ahmedabad - 382421, India</span>
+                <span className="leading-relaxed">B7-1601, Waterlily, Adani Shantigram, Nr Vaishnodevi circle, Ahmedabad-382421</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="shrink-0 text-copper-700" />
@@ -76,7 +77,7 @@ function Footer({ navigation, contactDetails, onNavigate }) {
 
         </div>
 
-        <div className="mt-16 pt-8 border-t border-clove-200/70 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-semibold text-clove-500">
+        <div className="mt-16 pt-8 border-t border-clove-200/70 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] font-bold text-clove-500 uppercase tracking-widest">
           <p>© {new Date().getFullYear()} Shaarav Global Ventures. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-clove-950 transition-colors">Privacy Policy</a>

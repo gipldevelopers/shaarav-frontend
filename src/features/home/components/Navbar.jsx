@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
-function Navbar({ navigation, onNavigate }) {
+function Navbar({ navigation }) {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,10 +17,10 @@ function Navbar({ navigation, onNavigate }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleNavigate = (sectionId) => {
+  // Handle closing mobile menu on navigation
+  useEffect(() => {
     setIsOpen(false)
-    onNavigate(sectionId)
-  }
+  }, [location])
 
   return (
     <header
@@ -30,9 +33,8 @@ function Navbar({ navigation, onNavigate }) {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <button
-            type="button"
-            onClick={() => handleNavigate('home')}
+          <Link
+            to="/"
             className="flex items-center gap-2 text-left"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-clove-950 text-spice-50 font-display font-bold text-lg">
@@ -41,29 +43,27 @@ function Navbar({ navigation, onNavigate }) {
             <span className="hidden sm:block font-display font-bold text-xl text-clove-950 tracking-wide">
               Shaarav
             </span>
-          </button>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <div className="flex items-center gap-6 text-sm font-semibold text-clove-700">
-              {navigation.map((item) => (
-                <button
-                  key={item.sectionId}
-                  type="button"
-                  onClick={() => handleNavigate(item.sectionId)}
-                  className="transition-colors hover:text-clove-950"
+            <div className="flex items-center gap-6 text-sm font-bold text-clove-700 uppercase tracking-wider">
+              {navigation.filter(item => !item.hidden).map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`transition-colors hover:text-copper-700 ${location.pathname === item.path ? 'text-copper-700' : ''}`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
             </div>
-            <button
-              type="button"
-              onClick={() => handleNavigate('contact')}
-              className="rounded-full bg-clove-950 px-5 py-2.5 text-sm font-semibold text-spice-50 transition-all hover:bg-clove-900 hover:shadow-lg hover:shadow-clove-950/15"
+            <Link
+              to="/contact-us"
+              className="rounded-full bg-clove-950 px-6 py-2.5 text-sm font-bold text-spice-50 transition-all hover:bg-clove-900 hover:shadow-lg hover:shadow-clove-950/15"
             >
               Get Quote
-            </button>
+            </Link>
           </nav>
 
           {/* Mobile Toggle */}
@@ -86,23 +86,21 @@ function Navbar({ navigation, onNavigate }) {
               className="md:hidden mt-4 rounded-2xl border border-clove-200 bg-white/95 p-4 backdrop-blur-xl shadow-lg"
             >
               <div className="flex flex-col gap-2">
-                {navigation.map((item) => (
-                  <button
-                    key={item.sectionId}
-                    type="button"
-                    onClick={() => handleNavigate(item.sectionId)}
-                    className="rounded-xl px-4 py-3 text-left text-sm font-semibold text-clove-800 hover:bg-spice-50"
+                {navigation.filter(item => !item.hidden).map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`rounded-xl px-4 py-3 text-left text-sm font-bold text-clove-800 hover:bg-spice-50 ${location.pathname === item.path ? 'text-copper-700 bg-spice-50' : ''}`}
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 ))}
-                <button
-                  type="button"
-                  onClick={() => handleNavigate('contact')}
-                  className="mt-2 w-full rounded-xl bg-clove-950 px-4 py-3 text-sm font-semibold text-spice-50"
+                <Link
+                  to="/contact-us"
+                  className="mt-2 w-full rounded-xl bg-clove-950 px-4 py-3 text-center text-sm font-bold text-spice-50"
                 >
                   Get Quote
-                </button>
+                </Link>
               </div>
             </motion.div>
           )}
