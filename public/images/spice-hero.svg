@@ -1,0 +1,38 @@
+<svg width="1200" height="1440" viewBox="0 0 1200 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1440" rx="72" fill="url(#bg)"/>
+  <rect x="78" y="74" width="1044" height="1292" rx="54" fill="url(#panel)" fill-opacity="0.84" stroke="rgba(255,255,255,0.55)"/>
+  <circle cx="964" cy="198" r="148" fill="url(#sun)" fill-opacity="0.9"/>
+  <circle cx="246" cy="302" r="102" fill="#F9EDDB"/>
+  <circle cx="246" cy="302" r="70" fill="#B95D39"/>
+  <circle cx="246" cy="302" r="42" fill="#F7B267"/>
+  <circle cx="886" cy="438" r="128" fill="#E6C36E"/>
+  <circle cx="886" cy="438" r="88" fill="#55745D"/>
+  <circle cx="886" cy="438" r="48" fill="#FFF4DE"/>
+  <circle cx="504" cy="554" r="150" fill="#EEE1D1"/>
+  <circle cx="504" cy="554" r="106" fill="#433126"/>
+  <circle cx="504" cy="554" r="64" fill="#F4D8AF"/>
+  <rect x="154" y="768" width="892" height="458" rx="44" fill="#140D09" fill-opacity="0.94"/>
+  <text x="220" y="866" fill="#F9EDDB" font-family="Georgia, serif" font-size="42" letter-spacing="8">PREMIUM SPICE SELECTION</text>
+  <text x="220" y="972" fill="white" font-family="Georgia, serif" font-size="116">Whole Spices</text>
+  <text x="220" y="1040" fill="#EEDCC7" font-family="Arial, sans-serif" font-size="34">Placeholder visual for hero storytelling, premium exports,</text>
+  <text x="220" y="1084" fill="#EEDCC7" font-family="Arial, sans-serif" font-size="34">and a warmer modern homepage presentation.</text>
+  <rect x="220" y="1138" width="204" height="64" rx="32" fill="#B95D39"/>
+  <text x="268" y="1179" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="700">EXPORT READY</text>
+  <path d="M874 1066C930 1014 1008 1026 1038 1100C1060 1156 1038 1228 960 1252C892 1272 804 1232 778 1168C746 1094 810 1034 874 1066Z" fill="#35503D"/>
+  <path d="M884 1088C924 1050 980 1060 1000 1116C1014 1158 998 1212 942 1230C894 1244 836 1214 818 1168C798 1120 842 1082 884 1088Z" fill="#DCA86B"/>
+  <defs>
+    <linearGradient id="bg" x1="76" y1="42" x2="1118" y2="1398" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6E8"/>
+      <stop offset="0.46" stop-color="#F7E5D1"/>
+      <stop offset="1" stop-color="#E7C8A8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="160" y1="96" x2="1054" y2="1290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFF8EF"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(964 198) rotate(90) scale(148)">
+      <stop stop-color="#E4C06D"/>
+      <stop offset="1" stop-color="#E4C06D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

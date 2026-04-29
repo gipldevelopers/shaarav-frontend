@@ -1,0 +1,92 @@
+import { MapPin, Phone, Mail } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
+function Footer({ navigation }) {
+  return (
+    <footer className="border-t border-clove-200/70 bg-white pt-16 pb-8">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          
+          {/* Brand Col */}
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-clove-950 text-spice-50 font-display font-bold text-lg">
+                SGV
+              </div>
+              <span className="font-display font-bold text-xl text-clove-950 tracking-wide">
+                Shaarav Global
+              </span>
+            </div>
+            <p className="text-sm leading-relaxed text-clove-700">
+              Premium exports and global sourcing. Delivering quality products worldwide with a focus on reliability, trust, and excellence.
+            </p>
+            <div className="flex gap-4 text-clove-700 text-sm font-bold uppercase tracking-widest">
+              <a href="#" className="hover:text-copper-700 transition-colors">FB</a>
+              <a href="#" className="hover:text-copper-700 transition-colors">TW</a>
+              <a href="#" className="hover:text-copper-700 transition-colors">IG</a>
+              <a href="#" className="hover:text-copper-700 transition-colors">IN</a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-display text-lg font-bold text-clove-950 mb-6 uppercase tracking-wider">Quick Links</h3>
+            <ul className="flex flex-col gap-3 text-sm text-clove-700 font-bold">
+              {navigation.filter(item => !item.hidden).map((item) => (
+                <li key={item.path}>
+                  <Link 
+                    to={item.path}
+                    className="hover:text-copper-700 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="font-display text-lg font-bold text-clove-950 mb-6 uppercase tracking-wider">Our Products</h3>
+            <ul className="flex flex-col gap-3 text-sm text-clove-700 font-bold">
+              <li><Link to="/products/whole-spices" className="hover:text-copper-700 transition-colors">Whole Spices</Link></li>
+              <li><a href="#" className="hover:text-copper-700 transition-colors pointer-events-none opacity-50">Powder Spices</a></li>
+              <li><a href="#" className="hover:text-copper-700 transition-colors pointer-events-none opacity-50">Tea & Coffee</a></li>
+              <li><a href="#" className="hover:text-copper-700 transition-colors pointer-events-none opacity-50">Custom Blends</a></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-display text-lg font-bold text-clove-950 mb-6 uppercase tracking-wider">Contact Us</h3>
+            <ul className="flex flex-col gap-4 text-sm text-clove-700 font-medium">
+              <li className="flex items-start gap-3">
+                <MapPin size={18} className="shrink-0 text-copper-700" />
+                <span className="leading-relaxed">B7-1601, Waterlily, Adani Shantigram, Nr Vaishnodevi circle, Ahmedabad-382421</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={18} className="shrink-0 text-copper-700" />
+                <span>+91 98240 28022</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={18} className="shrink-0 text-copper-700" />
+                <span>hello@shaaravglobalventures.com</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-clove-200/70 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] font-bold text-clove-500 uppercase tracking-widest">
+          <p>© {new Date().getFullYear()} Shaarav Global Ventures. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-clove-950 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-clove-950 transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
