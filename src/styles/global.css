@@ -1,0 +1,254 @@
+:root {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #23303d;
+  background:
+    radial-gradient(circle at top, rgba(236, 201, 75, 0.32), transparent 28%),
+    linear-gradient(180deg, #f8f4ea 0%, #fefdf9 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+code {
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(35, 48, 61, 0.08);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+.site-header,
+.site-footer,
+.site-main {
+  border: 1px solid rgba(35, 48, 61, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 40px rgba(35, 48, 61, 0.08);
+}
+
+.site-header,
+.site-footer {
+  padding: 20px 24px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 28px 28px 0 0;
+}
+
+.site-main {
+  padding: 36px 24px;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.site-footer {
+  border-radius: 0 0 28px 28px;
+}
+
+.brand-kicker,
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: #8c5c16;
+}
+
+.brand-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-pill,
+.button {
+  border-radius: 999px;
+  padding: 0.8rem 1.1rem;
+}
+
+.nav-pill {
+  background: rgba(140, 92, 22, 0.08);
+  color: #8c5c16;
+  font-weight: 600;
+}
+
+.hero-section,
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-section {
+  gap: 24px;
+  padding: 24px 0 36px;
+}
+
+.hero-visual {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.hero-base,
+.hero-framework,
+.hero-vite {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.hero-base {
+  z-index: 1;
+}
+
+.hero-framework {
+  z-index: 2;
+  top: 34px;
+  height: 28px;
+  transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+    scale(1.4);
+}
+
+.hero-vite {
+  z-index: 1;
+  top: 106px;
+  height: 26px;
+  width: auto;
+  transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+    scale(0.8);
+}
+
+.hero-copy h1,
+.page-shell h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 0.95;
+}
+
+.hero-copy p,
+.page-shell p,
+.info-card p {
+  margin: 0;
+  max-width: 640px;
+}
+
+.button {
+  border: 0;
+  background: #23303d;
+  color: #fffaf2;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(35, 48, 61, 0.18);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.info-card {
+  padding: 24px;
+  border-radius: 24px;
+  background: #fffdf8;
+  border: 1px solid rgba(35, 48, 61, 0.08);
+  text-align: left;
+}
+
+.info-card h2 {
+  margin: 0 0 10px;
+}
+
+.contact-form {
+  width: min(100%, 420px);
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(35, 48, 61, 0.15);
+  background: #ffffff;
+}
+
+.loader {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(35, 48, 61, 0.16);
+  border-top-color: #23303d;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    width: min(100%, calc(100% - 20px));
+    padding: 10px 0 20px;
+  }
+
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .site-header,
+  .site-main,
+  .site-footer {
+    padding-inline: 18px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
