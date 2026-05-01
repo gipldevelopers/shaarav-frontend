@@ -9,7 +9,7 @@ function Footer({ navigation }) {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Newsletter Section */}
-        <div className="mb-12 bg-spice-50/30 border border-spice-100 rounded-2xl p-4 md:px-8 md:py-5 flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="mb-16 bg-spice-50/30 border border-spice-100 rounded-2xl p-4 md:px-8 md:py-5 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-copper-700 text-white shrink-0 shadow-md shadow-copper-700/10">
               <Mail size={20} />
