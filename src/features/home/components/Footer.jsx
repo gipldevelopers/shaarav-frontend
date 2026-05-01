@@ -85,7 +85,6 @@ function Footer({ navigation }) {
               <li><Link to="/products/whole-spices" className="hover:text-copper-700 transition-colors">Whole Spices</Link></li>
               <li><Link to="/products/powder-spices" className="hover:text-copper-700 transition-colors">Powder Spices</Link></li>
               <li><Link to="/products/Tea-Coffee" className="hover:text-copper-700 transition-colors">Tea & Coffee</Link></li>
-              <li><Link to="#" className="hover:text-copper-700 transition-colors pointer-events-none opacity-50">Custom Blends</Link></li>
             </ul>
           </div>
 

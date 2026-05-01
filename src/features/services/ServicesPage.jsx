@@ -72,11 +72,11 @@ function ServicesPage() {
               variants={revealUp}
               className="bg-white/60 border border-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="aspect-[4/3] bg-spice-50 p-8 overflow-hidden">
+              <div className="aspect-[4/3] bg-spice-50 p-6 overflow-hidden">
                 <img 
                   src={cat.image} 
                   alt={cat.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 rounded-3xl" 
                 />
               </div>
               <div className="p-8">
