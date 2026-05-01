@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import React, { useRef, useState, useEffect } from 'react'
+import { motion, AnimatePresence, useInView, animate } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
   Globe, 
@@ -8,7 +9,14 @@ import {
   Briefcase, 
   Award,
   ArrowRight,
-  Star
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+  Star,
+  Sparkles,
+  Ship,
+  BarChart3,
+  ArrowUpRight
 } from 'lucide-react'
 
 const stats = [
@@ -21,18 +29,24 @@ const stats = [
 const services = [
   {
     icon: Globe,
-    title: 'Global Sourcing',
-    desc: 'Connecting international markets with premium quality manufacturers and suppliers.'
+    title: 'Direct Farm Sourcing',
+    desc: 'We source directly from trusted farmers to bring India’s rich legacy of spices to the globe with uncompromised purity and freshness.',
+    tags: ['Authentic Spices', 'Pure Sourcing'],
+    stat: 'Direct from Farms'
   },
   {
-    icon: ShieldCheck,
-    title: 'Quality Assurance',
-    desc: 'Rigorous multi-step quality control ensuring every export meets international standards.'
+    icon: Award,
+    title: 'Processing Excellence',
+    desc: 'Every product is hygienically processed and meticulously packed to preserve natural aroma, flavor, and international quality standards.',
+    tags: ['Standardized', 'Hygienic'],
+    stat: 'Premium Grade'
   },
   {
     icon: Truck,
-    title: 'Export Operations',
-    desc: 'Seamless wholesale shipping and supply chain management for international trade.'
+    title: 'Global Trade Network',
+    desc: 'A robust supply chain ensuring reliable deliveries, competitive pricing, and seamless business experiences for partners worldwide.',
+    tags: ['Timely Shipment', 'Transparent'],
+    stat: '15+ Countries'
   }
 ]
 
@@ -54,37 +68,100 @@ const testimonials = [
   {
     name: 'Sarah Jenkins',
     role: 'Procurement Manager',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop',
     feedback: 'Shaarav Global Ventures completely transformed our supply chain. The quality of spices we received was exceptional, and delivery was on time.',
     rating: 5
   },
   {
     name: 'Michael Chen',
     role: 'CEO, Global Foods',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop',
     feedback: 'A reliable partner for our global sourcing needs. Their attention to quality and professional communication makes them stand out.',
     rating: 5
   },
   {
     name: 'Elena Rodriguez',
     role: 'Operations Director',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop',
     feedback: 'We have been working with them for 3 years. The consistency in product quality and their commitment to timelines is unmatched.',
     rating: 4
+  },
+  {
+    name: 'David Thompson',
+    role: 'Supply Chain Lead',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
+    feedback: 'Their global network and logistics expertise have been invaluable. The transparency in their export operations is exactly what we needed.',
+    rating: 5
+  },
+  {
+    name: 'Priya Sharma',
+    role: 'Import Specialist',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop',
+    feedback: 'Authentic Indian flavors delivered with professional standards. Shaarav is our top choice for premium whole and ground spices.',
+    rating: 5
   }
 ]
 
 const revealUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+  hidden: { opacity: 0, y: 60 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: [0.21, 0.45, 0.27, 0.96] }
+  }
+}
+
+const Counter = ({ value }) => {
+  const [displayValue, setDisplayValue] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.5 })
+  
+  // Extract number and suffix (like '+' or 'k')
+  const numericValue = parseInt(value.replace(/[^0-9]/g, '')) || 0
+  const suffix = value.replace(/[0-9]/g, '')
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, numericValue, {
+        duration: 0.9,
+        ease: "easeOut",
+        onUpdate: (latest) => setDisplayValue(Math.floor(latest)),
+      })
+      return () => controls.stop()
+    }
+  }, [isInView, numericValue])
+
+  return <span ref={ref}>{displayValue}{suffix}</span>
 }
 
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 }
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
   }
 }
 
+const getInitials = (name) => {
+  return name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase();
+};
+
 function HomePage() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef(null);
+
+  const nextTestimonial = () => {
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <div className="relative overflow-x-hidden text-clove-900">
       <main>
@@ -135,62 +212,117 @@ function HomePage() {
         </section>
 
         {/* 2. STATS SECTION */}
-        <section className="relative z-20 -mt-12 sm:-mt-16 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="relative z-20 -mt-12 sm:-mt-8 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
           >
             {stats.map((stat, i) => (
               <motion.div 
                 key={i} 
                 variants={revealUp}
-                className="bg-white/80 border border-white rounded-2xl p-6 shadow-xl shadow-clove-900/5 backdrop-blur-md flex flex-col items-center text-center group hover:border-copper-300 transition-colors"
+                className="relative bg-white/70 border border-white/50 rounded-[3rem_1rem] p-5 sm:p-6 shadow-2xl shadow-clove-900/5 backdrop-blur-xl flex flex-col items-center text-center group hover:border-copper-300/50 transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="w-12 h-12 rounded-full bg-spice-100 flex items-center justify-center text-copper-700 mb-4 group-hover:scale-110 group-hover:bg-copper-100 transition-all">
-                  <stat.icon size={24} />
+                {/* Decorative Side Accent */}
+                <div className="absolute top-1/2 -translate-y-1/2 left-0 w-1 h-12 bg-gradient-to-b from-copper-500 to-transparent rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                <div className="relative mb-6">
+                  {/* Diamond-shaped icon container */}
+                  <div className="w-14 h-14 rounded-2xl rotate-45 bg-spice-100/50 flex items-center justify-center text-copper-700 group-hover:bg-copper-50 transition-all duration-500 shadow-sm border border-transparent group-hover:border-copper-200">
+                    <div className="-rotate-45">
+                      <stat.icon size={26} />
+                    </div>
+                  </div>
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-2xl rotate-45 bg-copper-400/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <h3 className="font-display text-3xl sm:text-4xl font-bold text-clove-950 mb-1">{stat.value}</h3>
-                <p className="text-sm font-semibold text-clove-700">{stat.label}</p>
+
+                <h3 className="font-display text-4xl sm:text-5xl font-medium text-clove-950 mb-2">
+                  <Counter value={stat.value} />
+                </h3>
+                <p className="text-xs font-medium text-clove-500 uppercase tracking-[0.2em]">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
         </section>
 
         {/* 3. CATEGORIES / SERVICES */}
-        <section className="py-24 lg:py-32 relative">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-18 lg:py-22 relative overflow-hidden">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Section Header - Enhanced */}
             <motion.div 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               variants={revealUp}
-              className="text-center max-w-3xl mx-auto mb-16"
+              className="text-center max-w-3xl mx-auto mb-20"
             >
-              <h2 className="text-copper-700 font-bold tracking-[0.2em] uppercase text-xs mb-3">Our Services</h2>
-              <h3 className="font-display text-4xl sm:text-5xl font-bold text-clove-950">Comprehensive Trade Solutions</h3>
+              
+              <h3 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-clove-950 mb-6 leading-tight">
+                Comprehensive Trade Solutions
+              </h3>
+              
+              <p className="text-clove-600 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+                Streamlined global trade management powered by cutting-edge technology and decades of industry expertise.
+              </p>
             </motion.div>
 
+            {/* Services Cards */}
             <motion.div 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               variants={staggerContainer}
-              className="grid md:grid-cols-3 gap-8"
+              className="grid md:grid-cols-3 gap-8 lg:gap-10"
             >
               {services.map((service, i) => (
                 <motion.div 
-                  key={i} 
+                  key={i}
                   variants={revealUp}
-                  className="bg-white/60 border border-white rounded-[2rem] p-8 shadow-sm hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-2 group"
+                  whileHover={{ y: -8 }}
+                  className="group relative h-full"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-spice-100 flex items-center justify-center text-copper-700 mb-6 group-hover:bg-copper-500 group-hover:text-white transition-colors">
-                    <service.icon size={28} />
+                  {/* Animated Border Gradient */}
+                  <div className="absolute -inset-[1px] bg-gradient-to-r from-copper-200/0 via-copper-400/50 to-copper-200/0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+                  
+                  <div className="relative bg-white/70 backdrop-blur-sm border border-white/40 rounded-3xl p-7 pb-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 h-full flex flex-col">
+                    {/* Card Accent Line */}
+                    <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-copper-400/40 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* Icon Container - Enhanced */}
+                    <div className="relative mb-8">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-spice-100 to-copper-100 flex items-center justify-center text-copper-700 group-hover:from-amber-500 group-hover:to-amber-700 group-hover:text-white transition-all duration-500 shadow-md group-hover:shadow-amber-500/20">
+                        <service.icon size={30} strokeWidth={1.7} />
+                      </div>
+                      
+                      {/* Status Badge */}
+                      <div className="absolute -top-2 -right-2 bg-white rounded-full px-2 py-0.5 text-[11px] font-semibold text-copper-700 shadow-sm border border-copper-100">
+                        {service.stat}
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h4 className="font-display text-2xl font-bold text-clove-950 mb-4 tracking-tight group-hover:text-copper-700 transition-colors">
+                      {service.title}
+                    </h4>
+                    
+                    {/* Description */}
+                    <p className="text-clove-600 leading-relaxed mb-6 flex-grow">
+                      {service.desc}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {service.tags.map((tag, idx) => (
+                        <span key={idx} className="text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-800 px-3 py-1 rounded-full border border-amber-200">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <h4 className="font-display text-2xl font-bold text-clove-950 mb-4">{service.title}</h4>
-                  <p className="text-clove-700 leading-relaxed">{service.desc}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -231,11 +363,11 @@ function HomePage() {
                   variants={revealUp}
                   className="group relative rounded-3xl overflow-hidden bg-white border border-white/80 shadow-md hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="aspect-[4/3] bg-spice-50 p-6 overflow-hidden">
+                  <div className="aspect-[4/3] bg-spice-50 p-6 overflow-hidden rounded-3xl">
                     <img 
                       src={product.image} 
                       alt={product.name} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                      className="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-500" 
                     />
                   </div>
                   <div className="p-6 relative z-10 bg-white">
@@ -300,45 +432,130 @@ function HomePage() {
         </section>
 
         {/* 6. TESTIMONIALS */}
-        <section className="py-24 bg-white/40 border-y border-clove-200/50">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-            <motion.div 
+        <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#F9EDDB' }}>
+          <div className="mx-auto w-full max-w-7xl px-4 relative">
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={revealUp}
-              className="text-center max-w-3xl mx-auto mb-16"
+              className="text-center mb-10"
             >
-              <h2 className="text-copper-700 font-bold tracking-[0.2em] uppercase text-xs mb-3">Social Proof</h2>
-              <h3 className="font-display text-4xl sm:text-5xl font-bold text-clove-950">Trusted by Leaders</h3>
+              <h2 className="font-display text-4xl sm:text-5xl font-bold text-clove-950 mb-4">Trusted by Businesses Worldwide</h2>
+              <p className="text-clove-600 max-w-2xl mx-auto text-lg">
+                See how global clients rely on our premium spices, tea, and coffee for consistent quality, authentic flavor, and dependable export service.
+              </p>
             </motion.div>
 
             <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid md:grid-cols-3 gap-6"
+              className="flex justify-center items-end min-h-[450px] relative gap-4 md:gap-8 mb-12 cursor-grab active:cursor-grabbing"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(e, { offset, velocity }) => {
+                const swipe = offset.x;
+                const threshold = 50;
+                if (swipe < -threshold) {
+                  nextTestimonial();
+                } else if (swipe > threshold) {
+                  prevTestimonial();
+                }
+              }}
             >
-              {testimonials.map((testimonial, i) => (
-                <motion.div 
-                  key={i} 
-                  variants={revealUp}
-                  className="bg-white border border-white/80 rounded-[2rem] p-8 relative shadow-md hover:shadow-xl transition-shadow duration-300"
-                >
-                  <div className="flex gap-1 text-gold-400 mb-6">
-                    {[...Array(testimonial.rating)].map((_, idx) => (
-                      <Star key={idx} size={18} fill="currentColor" />
-                    ))}
-                  </div>
-                  <p className="text-clove-800 italic mb-8 leading-relaxed font-medium">"{testimonial.feedback}"</p>
-                  <div>
-                    <h5 className="font-bold text-clove-950">{testimonial.name}</h5>
-                    <p className="text-sm font-semibold text-clove-600">{testimonial.role}</p>
-                  </div>
-                </motion.div>
-              ))}
+              {[-1, 0, 1].map((offset) => {
+                const index = (activeIndex + offset + testimonials.length) % testimonials.length;
+                const testimonial = testimonials[index];
+                const isCenter = offset === 0;
+
+                return (
+                  <motion.div
+                    key={index}
+                    layout
+                    initial={false}
+                    animate={{
+                      scale: isCenter ? 1.1 : 0.9,
+                      y: isCenter ? -60 : 0,
+                      opacity: isCenter ? 1 : 0.6,
+                      zIndex: isCenter ? 20 : 10,
+                    }}
+                    transition={{ 
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                      opacity: { duration: 0.3 }
+                    }}
+                    className={`flex-shrink-0 w-[280px] md:w-[320px] bg-white shadow-2xl rounded-3xl p-8 pt-12 text-center relative transition-colors ${isCenter ? 'border-t-4 border-copper-500' : ''}`}
+                  >
+                    {/* Floating Avatar */}
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2">
+                      <motion.div 
+                        animate={{ scale: isCenter ? 1 : 0.9 }}
+                        className="w-24 h-24 rounded-full border-[6px] border-[#F9EDDB] overflow-hidden shadow-xl bg-spice-100 flex items-center justify-center"
+                      >
+                        {testimonial.image ? (
+                          <img 
+                            src={testimonial.image} 
+                            alt={testimonial.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              e.target.parentElement.innerHTML = `<span class="text-copper-700 font-bold text-2xl">${getInitials(testimonial.name)}</span>`;
+                            }}
+                          />
+                        ) : (
+                          <span className="text-copper-700 font-bold text-2xl">
+                            {getInitials(testimonial.name)}
+                          </span>
+                        )}
+                      </motion.div>
+                    </div>
+
+                    <div className="pt-4">
+                      <h5 className="font-display text-xl font-bold text-clove-950 mb-1">{testimonial.name}</h5>
+                      <p className="text-copper-600 text-xs font-bold uppercase tracking-wider mb-4">{testimonial.role}</p>
+                    </div>
+                    
+                    <p className="text-clove-700 text-sm leading-relaxed italic mb-6">
+                      "{testimonial.feedback}"
+                    </p>
+
+                    <div className="flex justify-center gap-1 text-gold-500 mt-auto">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={16} fill={i < testimonial.rating ? "currentColor" : "none"} className={i < testimonial.rating ? "text-gold-500" : "text-clove-200"} />
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
+
+            {/* Navigation Arrows */}
+            <div className="absolute top-[60%] left-0 right-0 z-30 flex justify-between pointer-events-none px-4 md:px-8">
+              <button 
+                onClick={prevTestimonial}
+                className="group p-4 rounded-full bg-white shadow-2xl text-clove-400 hover:text-copper-600 hover:scale-110 transition-all duration-300 active:scale-95 pointer-events-auto"
+              >
+                <ChevronLeft size={32} />
+              </button>
+              
+              <button 
+                onClick={nextTestimonial}
+                className="group p-4 rounded-full bg-white shadow-2xl text-clove-400 hover:text-copper-600 hover:scale-110 transition-all duration-300 active:scale-95 pointer-events-auto"
+              >
+                <ChevronRight size={32} />
+              </button>
+            </div>
+
+            {/* Dots for tracking */}
+            <div className="flex justify-center gap-3 mt-12">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveIndex(i)}
+                  className={`h-2 rounded-full transition-all duration-500 ${activeIndex === i ? 'w-8 bg-copper-500' : 'w-2 bg-clove-200'}`}
+                />
+              ))}
+            </div>
           </div>
         </section>
 

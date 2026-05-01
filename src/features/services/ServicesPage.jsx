@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const revealUp = {
   hidden: { opacity: 0, y: 30 },
@@ -27,14 +28,14 @@ const categories = [
     title: 'Powder Spices',
     desc: 'Expertly ground spices with vibrant colors and intense flavors, processed under strict hygienic conditions.',
     image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop',
-    link: '#'
+    link: '/products/powder-spices'
   },
   {
     id: '03',
     title: 'Tea & Coffee',
     desc: 'Premium beverage selections from the best plantations, offering a refreshing and authentic taste experience.',
     image: 'https://shaaravglobalventures.live/wp-content/uploads/2025/06/Untitled-1.jpg?q=80&w=1000&auto=format&fit=crop',
-    link: '#'
+    link: '/products/Tea-Coffee'
   }
 ]
 
@@ -71,23 +72,23 @@ function ServicesPage() {
               variants={revealUp}
               className="bg-white/60 border border-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="aspect-[4/3] bg-spice-50 p-8 overflow-hidden">
+              <div className="aspect-[4/3] bg-spice-50 p-6 overflow-hidden">
                 <img 
                   src={cat.image} 
                   alt={cat.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 rounded-3xl" 
                 />
               </div>
               <div className="p-8">
                 <span className="text-copper-500 font-bold text-sm mb-2 block">{cat.id}</span>
                 <h3 className="font-display text-3xl font-bold text-clove-950 mb-4">{cat.title}</h3>
                 <p className="text-clove-700 leading-relaxed mb-8">{cat.desc}</p>
-                <a 
-                  href={cat.link}
+                <Link 
+                  to={cat.link}
                   className="inline-flex items-center gap-2 text-copper-700 font-bold hover:text-copper-800 transition-colors"
                 >
                   Explore Category <ArrowRight size={20} />
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -107,12 +108,12 @@ function ServicesPage() {
              <p className="text-spice-200/80 text-lg mb-10 leading-relaxed">
                We take pride in sharing the authentic flavors of India with the global market. Our export operations are designed for efficiency and transparency.
              </p>
-             <a 
-               href="/contact"
+             <Link 
+               to="/contact-us"
                className="inline-block px-10 py-4 bg-copper-500 text-white rounded-full font-bold hover:bg-copper-600 transition-all shadow-lg"
              >
                Get in Touch
-             </a>
+             </Link>
            </div>
         </motion.div>
 
