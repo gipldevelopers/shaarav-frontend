@@ -35,7 +35,7 @@ export const routes = [
     hidden: true,
   },
   {
-    path: '/products/Tea-Coffee',
+    path: '/products/tea-coffee',
     label: 'Tea Coffee',
     component: TeaCoffeePage,
     hidden: true,

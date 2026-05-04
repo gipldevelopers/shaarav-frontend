@@ -10,42 +10,42 @@ const spices = [
   { 
     name: 'Black Pepper', 
     desc: 'King of spices, known for its intense aroma and heat.',
-    image: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=7fa996f0db6080dffe76b90ee4f454165cbdea289bed526ad76079ed2ab1eb3b'
   },
   { 
     name: 'Cumin Seeds', 
     desc: 'Essential for its earthy flavor and numerous health benefits.',
-    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=a0a44a65fa7184650f9ebd02cae47ed9d9c2193e17e89c70d156512a929e55e0'
   },
   { 
     name: 'Cardamom', 
     desc: 'The "Queen of Spices" with a unique, sweet-spicy aroma.',
-    image: 'https://images.unsplash.com/photo-1621841957884-1210fe19d66d?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=567d8a3e661a2291794e5d0b04687552a99a8206032707a024593a4079d9b891'
   },
   { 
     name: 'Cloves', 
     desc: 'Intensely aromatic and flavorful flower buds.',
-    image: 'https://images.unsplash.com/photo-1614735241165-6756e1df61ab?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=b7f1178a14a1a78680c568db7ec81367f0a7f4c81f2ddc4262f3c5b24ee5f86b'
   },
   { 
     name: 'Coriander Seeds', 
     desc: 'Sweet, citrusy flavor used globally in various cuisines.',
-    image: 'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=ebf0b07469b522819869a8c81e173185a1e2405f8588217d0066e315ff3cd4a1'
   },
   { 
     name: 'Cinnamon Sticks', 
     desc: 'Sweet and woody spice sourced from the inner bark.',
-    image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=7a3d49aacc60ab8ea0f72a9356f7034e8edf0adc761ca447c0c0aac43ff4ddab'
   },
   { 
     name: 'Turmeric Fingers', 
     desc: 'Bright yellow spice with potent medicinal properties.',
-    image: 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=0496b4a3ff00acf2e7014e0cb5a0ab587534c7bf33cd24582b891cee956c3d81'
   },
   { 
     name: 'Dried Red Chili', 
     desc: 'Adds fiery heat and vibrant color to any dish.',
-    image: 'https://images.unsplash.com/photo-1588165171080-c89acfa5ee83?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=b851cbb6981b38c07b40d3a7ca3f6569ddc550c432d3d030316dfdce9678b173'
   }
 ]
 
@@ -77,7 +77,7 @@ function WholeSpicesPage() {
           className="relative mb-24 rounded-[3rem] overflow-hidden aspect-[21/9]"
         >
            <img 
-             src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?q=80&w=2000&auto=format&fit=crop" 
+             src="https://cloud.gvoice.app/view.php?token=416052e2685ecaaf395cbf5579805966d393ab789f448356c9d43590c6d06dcf" 
              alt="Whole Spices Showcase" 
              className="w-full h-full object-cover"
            />

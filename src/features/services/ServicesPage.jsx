@@ -20,22 +20,22 @@ const categories = [
     id: '01',
     title: 'Whole Spices',
     desc: 'Pure, unprocessed seeds and pods sourced from Indias finest farms, preserving natural oils and aroma.',
-    image: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?q=80&w=1000&auto=format&fit=crop',
+    image: 'https://cloud.gvoice.app/view.php?token=416052e2685ecaaf395cbf5579805966d393ab789f448356c9d43590c6d06dcf',
     link: '/products/whole-spices'
   },
   {
     id: '02',
     title: 'Powder Spices',
     desc: 'Expertly ground spices with vibrant colors and intense flavors, processed under strict hygienic conditions.',
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop',
+    image: 'https://cloud.gvoice.app/view.php?token=e1e92559dd816bdf6f79f86a9c9f0ebd024c526ef6c7bcec51e09dd7b43e95da',
     link: '/products/powder-spices'
   },
   {
     id: '03',
     title: 'Tea & Coffee',
     desc: 'Premium beverage selections from the best plantations, offering a refreshing and authentic taste experience.',
-    image: 'https://shaaravglobalventures.live/wp-content/uploads/2025/06/Untitled-1.jpg?q=80&w=1000&auto=format&fit=crop',
-    link: '/products/Tea-Coffee'
+    image: 'https://cloud.gvoice.app/view.php?token=bbd833862581188debe1e111d1111539db9c7635fdd6177643c214fbbd34b376',
+    link: '/products/tea-coffee'
   }
 ]
 
