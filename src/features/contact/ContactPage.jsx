@@ -104,7 +104,7 @@ function ContactPage() {
                     attributionControl={false}
                   >
                     {/* Floating Info Card (Google Maps Style) */}
-                    <div className="absolute top-4 left-4 z-10 bg-white p-3 shadow-lg rounded-sm border border-gray-200 min-w-[180px] pointer-events-auto">
+                    <div className="absolute top-4 left-4 z-[400] bg-white p-3 shadow-lg rounded-sm border border-gray-200 min-w-[180px] pointer-events-auto">
                       <div className="text-[13px] font-medium text-gray-900">Shaarav Global Ventures</div>
                       <div className="text-[11px] text-gray-500 mb-2 truncate">B7-1601, Waterlily, Adani Shantigram</div>
                       <div className="flex flex-col gap-1 pt-2 border-t border-gray-100">

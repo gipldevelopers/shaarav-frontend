@@ -14,7 +14,7 @@ function Navbar({ navigation }) {
   const productLinks = [
     { label: 'Whole Spices', path: '/products/whole-spices' },
     { label: 'Powder Spices', path: '/products/powder-spices' },
-    { label: 'Tea & Coffee', path: '/products/Tea-Coffee' },
+    { label: 'Tea & Coffee', path: '/products/tea-coffee' },
   ]
 
   useEffect(() => {

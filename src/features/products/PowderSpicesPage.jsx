@@ -10,42 +10,42 @@ const spices = [
   { 
     name: 'Turmeric Powder', 
     desc: 'Finely ground, vibrant yellow spice known for its medicinal properties and earthy flavor.',
-    image: 'https://plus.unsplash.com/premium_photo-1672076780330-ae81962ee3ce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VHVybWVyaWMlMjBQb3dkZXJ8ZW58MHx8MHx8fDA%3D'
+    image: 'https://cloud.gvoice.app/view.php?token=8a9dfb526fdf5335a17529874453eafc8c579d17d8a674c1dd237329da14c76d'
   },
   { 
     name: 'Red Chilli Powder', 
     desc: 'Expertly ground dried red chillies, adding heat and vibrant color to culinary creations.',
-    image: 'https://plus.unsplash.com/premium_photo-1691030658362-5b646a6480e5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UmVkJTIwQ2hpbGxpJTIwUG93ZGVyfGVufDB8fDB8fHww'
+    image: 'https://cloud.gvoice.app/view.php?token=6af2d63da1383cc35945e54214ef71234cfdd0d5c070e45b57124023bf588eac'
   },
   { 
     name: 'Cinnamon Powder', 
     desc: 'Aromatic and sweet ground cinnamon, perfect for both savory and sweet dishes.',
-    image: 'https://images.unsplash.com/photo-1636972955024-3b01f2236b01?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q2lubmFtb24lMjBQb3dkZXJ8ZW58MHx8MHx8fDA%3D'
+    image: 'https://cloud.gvoice.app/view.php?token=167eaff9e0a78a11010dc32f651aca7179ef7dc79dc34cc2861e3d1e94f220c8'
   },
   { 
     name: 'Black Pepper Powder', 
     desc: 'Freshly ground black peppercorns, offering a sharp, spicy bite and rich aroma.',
-    image: 'https://media.istockphoto.com/id/979264404/photo/ground-black-pepper.webp?a=1&b=1&s=612x612&w=0&k=20&c=VT7S3Vj7CDVI2UwPhqZqWOtsQaoZr97avKhUQxxd57E='
+    image: 'https://cloud.gvoice.app/view.php?token=35a9e7baa095189623f2ffe4a9104b012d3bc2657a4afa2a3ad20789367e60e7'
   },
   { 
     name: 'Coriander Powder', 
     desc: 'Milled coriander seeds with a citrusy, nutty flavor, essential for Indian spice blends.',
-    image: 'https://media.istockphoto.com/id/1153477893/photo/crushed-coriander-powder.webp?a=1&b=1&s=612x612&w=0&k=20&c=G72-tOhpJlSTh08MrHVj_Czbs6LH2L2y6nuSsqbeGB8='
+    image: 'https://cloud.gvoice.app/view.php?token=897150ec8439ddf5380ce1b5984c481e521e77a328332559e06e48d49ee3764f'
   },
   { 
     name: 'Cumin Powder', 
     desc: 'Ground roasted cumin seeds, providing a deep, smoky flavor and warm aroma.',
-    image: 'https://plus.unsplash.com/premium_photo-1726862790171-0d6208559224?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q3VtaW4lMjBQb3dkZXJ8ZW58MHx8MHx8fDA%3D'
+    image: 'https://cloud.gvoice.app/view.php?token=a5a2d9b36ccd4427b57c9b322de1228491d7835bb916dab7ef41180ce0c196e0'
   },
   { 
     name: 'Ginger Powder', 
     desc: 'Finely milled dried ginger root, offering a sharp, zesty kick and digestive benefits.',
-    image: 'https://media.istockphoto.com/id/1167521639/photo/dried-ginger-and-ground-ginger-close-up.webp?a=1&b=1&s=612x612&w=0&k=20&c=sUkvhawm6NhU2plQ7hCsc-v8XL61kTh8TqPU8D9iTbo='
+    image: 'https://cloud.gvoice.app/view.php?token=749f6f4956667a6702c6953e1e2585346ca73cb3b7c57c9af04de17d186cee1e'
   },
   { 
     name: 'Asafoetida (Hing)', 
     desc: 'Pure, potent asafoetida powder, known for its unique savory aroma and digestive properties.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OYFWEtLGcfN9j_mjUpoyp9A99dIaVZW6cSDuvLTnpNS2uwNIWe4ESyQ&s'
+    image: 'https://cloud.gvoice.app/view.php?token=93ab24855759b2a6e40a4d4c8a3c9388b8d4a50428f041b5b7b316c5cef786e0'
   }
 ]
 
@@ -77,7 +77,7 @@ function PowderSpicesPage() {
           className="relative mb-24 rounded-[3rem] overflow-hidden aspect-[21/9]"
         >
            <img 
-             src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2000&auto=format&fit=crop" 
+             src="https://cloud.gvoice.app/view.php?token=e1e92559dd816bdf6f79f86a9c9f0ebd024c526ef6c7bcec51e09dd7b43e95da" 
              alt="Powder Spices Showcase" 
              className="w-full h-full object-cover"
            />

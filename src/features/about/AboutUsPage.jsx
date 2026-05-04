@@ -61,7 +61,7 @@ function AboutUsPage() {
           >
              <div className="absolute inset-0 bg-gold-300/30 rounded-[2.5rem] blur-2xl transform rotate-3" />
              <img 
-               src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop" 
+               src="https://cloud.gvoice.app/view.php?token=ef29dd028a3b3255b84cf4b50d017c57756a0a970a77994512eb15b5e9986df9" 
                alt="Our Story" 
                className="relative rounded-[2.5rem] w-full h-[400px] object-cover border border-white/80 shadow-2xl bg-white p-2"
              />

@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, ShieldCheck, Globe, Truck, Leaf, ArrowRight } from 'lucide-react'
+import { MapPin, Phone, Mail, ShieldCheck, Globe, Truck, Leaf, ArrowRight, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 
 import { Link } from 'react-router-dom'
 
@@ -53,11 +53,11 @@ function Footer({ navigation }) {
             <p className="text-sm leading-relaxed text-clove-700">
               Premium exports and global sourcing. Delivering quality products worldwide with a focus on reliability, trust, and excellence.
             </p>
-            <div className="flex gap-4 text-clove-700 text-sm font-bold uppercase tracking-widest">
-              <a href="#" className="hover:text-copper-700 transition-colors">FB</a>
-              <a href="#" className="hover:text-copper-700 transition-colors">TW</a>
-              <a href="#" className="hover:text-copper-700 transition-colors">IG</a>
-              <a href="#" className="hover:text-copper-700 transition-colors">IN</a>
+            <div className="flex gap-5 text-clove-700">
+              <a href="#" className="hover:text-copper-700 transition-all hover:scale-110"><Facebook size={18} /></a>
+              <a href="#" className="hover:text-copper-700 transition-all hover:scale-110"><Twitter size={18} /></a>
+              <a href="https://www.instagram.com/shaarav_global?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer" className="hover:text-copper-700 transition-all hover:scale-110"><Instagram size={18} /></a>
+              <a href="#" className="hover:text-copper-700 transition-all hover:scale-110"><Linkedin size={18} /></a>
             </div>
           </div>
 
@@ -84,7 +84,7 @@ function Footer({ navigation }) {
             <ul className="flex flex-col gap-3 text-sm text-clove-700 font-bold">
               <li><Link to="/products/whole-spices" className="hover:text-copper-700 transition-colors">Whole Spices</Link></li>
               <li><Link to="/products/powder-spices" className="hover:text-copper-700 transition-colors">Powder Spices</Link></li>
-              <li><Link to="/products/Tea-Coffee" className="hover:text-copper-700 transition-colors">Tea & Coffee</Link></li>
+              <li><Link to="/products/tea-coffee" className="hover:text-copper-700 transition-colors">Tea & Coffee</Link></li>
             </ul>
           </div>
 
@@ -141,16 +141,16 @@ function Footer({ navigation }) {
           {/* Divider with Copper Accent */}
           <div className="relative h-px w-full bg-white/10 hidden md:block" />
           {/* Copyright & Links */}
-          <div className="relative z-10 py-3 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="relative z-10 py-3 flex flex-col md:flex-row items-center justify-end gap-6">
             <div className="flex items-center gap-4 text-[11px] font-bold text-white/50 tracking-wide uppercase">
               <span>© {new Date().getFullYear()} Shaarav Global Ventures. All rights reserved.</span>
             </div>
 
-            <div className="flex items-center gap-8 text-[11px] font-bold text-white/50 uppercase tracking-[0.2em]">
+            {/* <div className="flex items-center gap-8 text-[11px] font-bold text-white/50 uppercase tracking-[0.2em]">
               <a href="#" className="hover:text-white transition-all">Privacy Policy</a>
               <span className="text-white/10 font-normal">|</span>
               <a href="#" className="hover:text-white transition-all">Terms of Service</a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
