@@ -10,42 +10,42 @@ const spices = [
   { 
     name: 'Assam Black Tea', 
     desc: 'Bold, malty, and full-bodied tea sourced directly from the finest estates.',
-    image: 'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=da0b7f22d5f25fca29aaaefec6a96f8449c2e8a8706f957e048e666d206b093c'
   },
   { 
     name: 'Darjeeling Tea', 
     desc: 'The "Champagne of Teas" with a delicate aroma and floral notes.',
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=4fdadc1db9b6297d70e1b6a315f853f6438bbd6eb399547d8d1571462b341cf2'
   },
   { 
     name: 'Green Tea', 
     desc: 'Rich in antioxidants, offering a smooth and refreshing experience.',
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=164e095ae8970c12bf500de85d7bf338a0bfde3db4a15730fe16485c70f6a25e'
   },
   { 
     name: 'Masala Chai Blend', 
     desc: 'A robust blend of premium tea leaves and aromatic Indian spices.',
-    image: 'https://images.unsplash.com/photo-1557006021-b85faa2bc5e2?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=f64879e176ce7688e2c522fe74416f062c37aeb0902831162b13e4489fe4d063'
   },
   { 
     name: 'Arabica Coffee Beans', 
     desc: 'Smooth, sweet, and complex flavors with low acidity and bitterness.',
-    image: 'https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=e3bedb40995958f7f7add5923c2c0ffbdc9c90e12a1f804459c0aa4defbc8940'
   },
   { 
     name: 'Robusta Coffee Beans', 
     desc: 'Strong, full-bodied espresso beans with a deep, rich crema.',
-    image: 'https://images.unsplash.com/photo-1518057111178-44a106bad636?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=8a4767bf6a399b47cbc4b9de00002d267dfe2ecc0e02fa85119bf6f27e278f7a'
   },
   { 
     name: 'Filter Coffee Powder', 
     desc: 'Traditional South Indian blend of roasted coffee and chicory.',
-    image: 'https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=7afcd84b2f03b5df76984eaddcacd3ce1f7e07666f79693a1dae8ca0ccfedc03'
   },
   { 
     name: 'Instant Coffee', 
     desc: 'Premium freeze-dried coffee for a quick, aromatic cup anywhere.',
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://cloud.gvoice.app/view.php?token=26c655723da06d3103fce8c7285b984656bdae7f69cfbf79f524a31ed7e9e3a5'
   }
 ]
 
@@ -77,7 +77,7 @@ function TeaCoffeePage() {
           className="relative mb-24 rounded-[3rem] overflow-hidden aspect-[21/9]"
         >
            <img 
-             src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2000&auto=format&fit=crop" 
+             src="https://cloud.gvoice.app/view.php?token=bbd833862581188debe1e111d1111539db9c7635fdd6177643c214fbbd34b376" 
              alt="Tea & Coffee Showcase" 
              className="w-full h-full object-cover"
            />
